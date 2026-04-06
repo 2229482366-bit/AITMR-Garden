@@ -1,42 +1,68 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import ContactSection from '../../components/Home/ContactSection'
+import homeAvatar from '../../assets/home-avatar.png'
 import WorksSection from '../../components/Home/WorksSection'
 
 function HomePage() {
   return (
-    <div className="space-y-10">
+    <div>
       <motion.section
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: 'easeOut' }}
-        className="card-warm overflow-hidden p-6 md:p-10"
+        className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#EFEDE7] py-16 md:py-24"
       >
-        <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
-          <div className="space-y-5">
-            <p className="inline-flex rounded-full bg-warm-accent/55 px-3 py-1 text-sm text-warm-title">
-              温暖的初见
-            </p>
+        <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
+            <div className="space-y-5 text-center">
+              <h1 className="text-3xl font-normal leading-tight text-black md:text-4xl">
+                铁某人
+              </h1>
 
-            <h1 className="title-warm text-3xl font-semibold leading-tight md:text-5xl">
-              用数据理解世界，
-              <span className="block text-warm-primary">用设计感受生活。</span>
-            </h1>
+              <p className="text-sm tracking-wide text-textMuted md:text-base">alchain</p>
 
-            <p className="text-warm max-w-xl text-base leading-8 md:text-lg">
-              你好，我是一名前端与数据实践者。这里是我的个人数字花园，记录作品、沉淀洞察，也收藏日常灵感。
-              希望每一次访问，都像翻开一页有温度的手账。
-            </p>
-          </div>
+              <p className="mx-auto max-w-xl text-base leading-8 text-textMuted md:text-lg">
+                用数据理解世界，
+                <br />
+                用设计感受生活的独立开发者。
+                <br />
+                构建 <span className="font-medium text-black">AI产品</span>，创作
+                <span className="font-medium text-black">科技内容</span>，
+                <br />
+                探索<span className="font-medium text-black">未来</span>的可能。
+              </p>
 
-          <div className="flex justify-center md:justify-end">
-            <div className="relative w-full max-w-sm rounded-card bg-warm-card p-5 shadow-soft">
-              <div className="absolute inset-x-6 -top-4 h-12 rounded-full bg-warm-accent/45 blur-lg" />
-              <div className="relative rounded-card border border-warm-accent/50 bg-warm-bg p-6">
-                <div className="mx-auto flex h-52 w-52 items-center justify-center rounded-card bg-warm-accent/40 text-5xl font-semibold text-warm-title shadow-soft">
-                  ME
+              <div className="flex flex-wrap justify-center gap-4 pt-2">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center bg-[#C89A67] px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-[#B98755]"
+                >
+                  联系合作
+                </Link>
+                <a
+                  href="#works"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="inline-flex items-center bg-[#EFEDE7] px-7 py-3 text-sm font-medium text-textMain transition-colors hover:bg-[#E3DFD6]"
+                >
+                  查看作品
+                </a>
+              </div>
+            </div>
+
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-full max-w-sm bg-[#F3F0E9] p-4">
+                <div className="relative border border-[#E4DED2] bg-[#F3F0E9] p-6">
+                  <img
+                    src={homeAvatar}
+                    alt="首页头像"
+                    loading="lazy"
+                    className="mx-auto h-64 w-64 object-cover md:h-72 md:w-72"
+                  />
                 </div>
-                <p className="mt-4 text-center text-sm text-warm">
-                  头像 / 虚拟形象占位区域
-                </p>
               </div>
             </div>
           </div>
@@ -44,6 +70,7 @@ function HomePage() {
       </motion.section>
 
       <WorksSection />
+      <ContactSection />
     </div>
   )
 }

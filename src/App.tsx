@@ -4,6 +4,8 @@ import './App.css'
 
 const Layout = lazy(() => import('./components/layout/Layout'))
 const HomePage = lazy(() => import('./pages/Home'))
+const ContactPage = lazy(() => import('./pages/Contact'))
+const WorkDetailPage = lazy(() => import('./pages/Works/Detail'))
 const InsightsPage = lazy(() => import('./pages/Insights'))
 const InsightDetailPage = lazy(() => import('./pages/Insights/Detail'))
 const InspirationsPage = lazy(() => import('./pages/Inspirations'))
@@ -21,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="works/:id" element={<WorkDetailPage />} />
           <Route path="insights" element={<InsightsPage />} />
           <Route path="insights/:id" element={<InsightDetailPage />} />
           <Route path="inspirations" element={<InspirationsPage />} />

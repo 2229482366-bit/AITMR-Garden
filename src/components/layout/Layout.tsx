@@ -1,49 +1,53 @@
-import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { NavLink, useLocation, useNavigate, useOutlet } from 'react-router-dom'
+import PageTransition from './PageTransition'
 
 function Layout() {
   const navigate = useNavigate()
   const location = useLocation()
+  const outlet = useOutlet()
 
-  const scrollToWorks = () => {
+  const scrollToSection = (id: string) => {
     if (location.pathname !== '/') {
       navigate('/')
-      setTimeout(() => {
-        document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })
-      }, 60)
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }, 80)
       return
     }
 
-    document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <div className="min-h-screen bg-warm-bg text-warm-text">
-      <header className="border-b border-warm-accent/50 bg-warm-card/90 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-warm-accent/35 bg-warm-bg/95 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 md:px-8">
-          <span className="title-warm text-lg font-semibold">个人数字花园</span>
-          <nav className="flex flex-wrap gap-2">
-            <NavLink
-              to="/"
-              end
-              className={({ isActive }) =>
-                [
-                  'rounded-full px-3 py-1.5 text-sm transition-all',
-                  isActive
-                    ? 'bg-warm-primary text-white'
-                    : 'bg-warm-accent/40 text-warm-title hover:bg-warm-accent/70',
-                ].join(' ')
-              }
-            >
-              首页
-            </NavLink>
-
+          <NavLink to="/" className="text-lg font-semibold tracking-wide text-black">
+            铁某人的小屋
+          </NavLink>
+          <nav className="flex flex-wrap items-center gap-5 md:gap-7">
             <button
               type="button"
-              onClick={scrollToWorks}
-              className="rounded-full bg-warm-accent/40 px-3 py-1.5 text-sm text-warm-title transition-all hover:bg-warm-accent/70"
+              onClick={() => scrollToSection('works')}
+              className="text-sm text-textMuted transition-colors hover:text-textMain"
             >
               作品
             </button>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                [
+                  'text-sm transition-colors',
+                  isActive
+                    ? 'font-medium text-textMain'
+                    : 'text-textMuted hover:text-textMain',
+                ].join(' ')
+              }
+            >
+              联系
+            </NavLink>
 
             {[
               { to: '/insights', label: '洞察' },
@@ -55,10 +59,10 @@ function Layout() {
                 to={item.to}
                 className={({ isActive }) =>
                   [
-                    'rounded-full px-3 py-1.5 text-sm transition-all',
+                    'text-sm transition-colors',
                     isActive
-                      ? 'bg-warm-primary text-white'
-                      : 'bg-warm-accent/40 text-warm-title hover:bg-warm-accent/70',
+                      ? 'font-medium text-textMain'
+                      : 'text-textMuted hover:text-textMain',
                   ].join(' ')
                 }
               >
@@ -69,13 +73,15 @@ function Layout() {
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-8">
-        <Outlet />
+      <main className="mx-auto w-full max-w-6xl px-4 md:px-8">
+        <AnimatePresence mode="wait" initial={false}>
+          <PageTransition key={location.pathname}>{outlet}</PageTransition>
+        </AnimatePresence>
       </main>
 
-      <footer className="border-t border-warm-accent/50 bg-warm-card">
-        <div className="mx-auto w-full max-w-6xl px-4 py-6 text-sm text-warm-text md:px-8">
-          © {new Date().getFullYear()} 个人数字花园 · 持续生长中
+      <footer className="border-t border-warm-accent/35 bg-warm-bg">
+        <div className="mx-auto w-full max-w-6xl px-4 py-6 text-sm text-textMuted md:px-8">
+          © {new Date().getFullYear()} 铁某人的小屋 · 持续生长中
         </div>
       </footer>
     </div>
