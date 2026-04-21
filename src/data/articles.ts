@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'daily-2026-04-21-llama-maia-cost-down-signal',
+    title: 'AI 日报｜大模型与算力双线降本，产业进入工程化深水区',
+    date: '2026-04-21',
+    readTime: '7 分钟',
+    summary:
+      '今日关注 Llama 3.2 小参数模型与微软 Maia 200 所代表的降本趋势，同时具身智能工业闭环与 AI 风格侵权立法推进，显示 AI 竞争已转向可持续商业化与制度化落地。',
+    category: 'daily',
+    tags: ['AI 日报', 'Llama', 'Maia 200', '具身智能', '版权监管'],
+  },
+  {
     id: 'daily-2026-04-20-ai-embodied-intelligence-and-sora-rumor',
     title: 'AI 日报｜机器人刷新体能边界，Sora 传闻引发商业化反思',
     date: '2026-04-20',
