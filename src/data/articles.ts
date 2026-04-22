@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'daily-2026-04-22-openai-chip-and-reasoning-race',
+    title: 'AI 日报｜算力去中心化提速，模型竞争进入硬件与推理新阶段',
+    date: '2026-04-22',
+    readTime: '7 分钟',
+    summary:
+      'OpenAI 联手博通布局 3nm 自研芯片、智谱 GLM-5 强化长链推理，叠加微软欧盟反垄断回应与具身智能突破，显示 AI 竞争正从参数规模转向算力自主、推理能力与产业化落地。',
+    category: 'daily',
+    tags: ['AI 日报', 'OpenAI', '自研芯片', 'GLM-5', '具身智能'],
+  },
+  {
     id: 'daily-2026-04-21-llama-maia-cost-down-signal',
     title: 'AI 日报｜大模型与算力双线降本，产业进入工程化深水区',
     date: '2026-04-21',
