@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'daily-2026-04-23-google-tpu-agentic-ai-race',
+    title: 'AI 日报｜Google TPU 8 系列落地，产业竞争进入“重系统时代”',
+    date: '2026-04-23',
+    readTime: '7 分钟',
+    summary:
+      'Google 发布 TPU 8i/8t 强化全栈算力布局，联手 Palo Alto 补齐智能体安全治理；同时丰田、Meta、百度在城市、社交与助手场景推进落地，AI 竞争正从模型能力转向系统化执行与协同。',
+    category: 'daily',
+    tags: ['AI 日报', 'Google TPU', 'Agentic AI', 'AI 安全', '产业落地'],
+  },
+  {
     id: 'daily-2026-04-22-openai-chip-and-reasoning-race',
     title: 'AI 日报｜算力去中心化提速，模型竞争进入硬件与推理新阶段',
     date: '2026-04-22',
