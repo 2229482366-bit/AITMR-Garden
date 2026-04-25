@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'weekly-2026-04-25-claude-gpt-deepseek-model-selection',
+    title: '周报｜Claude 4.7、GPT-5.5、DeepSeek-V4：能力对比与选型指南',
+    date: '2026-04-25',
+    readTime: '12 分钟',
+    summary:
+      '基于三家官方发布信息，系统梳理 Claude Opus 4.7、GPT-5.5 与 DeepSeek-V4 在能力、提示策略、成本与场景适配上的差异，并给出可直接落地的多模型路由建议。',
+    category: 'weekly',
+    tags: ['周报', 'Claude Opus 4.7', 'GPT-5.5', 'DeepSeek-V4', '模型选型'],
+  },
+  {
     id: 'daily-2026-04-25-apple-openelm-and-legal-coherence',
     title: 'AI 日报｜OpenELM 与版权判例共振，AI 进入“口袋化 + 合规化”新阶段',
     date: '2026-04-25',
