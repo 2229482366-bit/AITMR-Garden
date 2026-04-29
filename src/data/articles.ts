@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'daily-2026-04-29-deepseek-price-shock-and-ai-stack-reshuffle',
+    title: 'AI 日报｜DeepSeek V4 冲击扩散，AI 价值链重心加速迁移',
+    date: '2026-04-29',
+    readTime: '7 分钟',
+    summary:
+      'DeepSeek V4 低价与长文本开源冲击通用模型估值，工业富联业绩验证算力基建景气延续，OpenAI 传出自研手机与 Agent 交互路线，显示行业竞争正从底座模型转向基础设施与入口生态。',
+    category: 'daily',
+    tags: ['AI 日报', 'DeepSeek V4', '工业富联', 'OpenAI 硬件', 'Agent 交互'],
+  },
+  {
     id: 'daily-2026-04-28-google-anthropic-gpt-55-deepseek-physical-ai-policy',
     title: 'AI 日报｜巨头防御性投资升级，Agentic 能力与物理 AI 同步提速',
     date: '2026-04-28',
