@@ -5,6 +5,7 @@ export interface Inspiration {
   type: InspirationType
   content: string
   imageUrl?: string
+  mediaPosition?: 'top' | 'bottom'
   author?: string
   createdAt: string
 }

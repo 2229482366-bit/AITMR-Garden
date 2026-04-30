@@ -2,6 +2,16 @@ import type { WorkProject } from '../types/work'
 
 export const works: WorkProject[] = [
   {
+    id: 'rain-screen',
+    title: '雨屏',
+    summary: '听着雨声，记录下你的奇思妙想',
+    coverImage: '/rain-window.svg',
+    demoUrl: '/rain_editor.html',
+    tags: ['HTML', 'Canvas', 'WebGL'],
+    year: '2026',
+    role: '前端交互创作',
+  },
+  {
     id: 'retail-demand-forecast',
     title: '零售需求预测与补货决策看板',
     summary:

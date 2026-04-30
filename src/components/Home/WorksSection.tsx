@@ -26,16 +26,12 @@ function WorksSection() {
         </motion.div>
 
         <div className="max-h-[520px] overflow-y-auto rounded-card border border-[#DED8CA]">
-          {works.map((project, index) => (
+          {works.map((project) => (
             <Link
               key={project.id}
               to={`/works/${project.id}`}
-              className="group grid grid-cols-[56px_1fr_auto] items-start gap-4 border-b border-[#E4DED2] px-4 py-6 transition-colors hover:bg-[#F0ECE2] md:grid-cols-[80px_1fr_auto] md:px-8"
+              className="group grid grid-cols-[1fr_auto] items-start gap-4 border-b border-[#E4DED2] px-4 py-6 transition-colors hover:bg-[#F0ECE2] md:px-8"
             >
-              <span className="pt-1 text-sm text-textMuted">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-
               <div>
                 <h3 className="mb-1 text-2xl font-normal text-warm-title transition-colors group-hover:text-textMain">
                   {project.title}

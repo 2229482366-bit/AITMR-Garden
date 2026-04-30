@@ -1,4 +1,4 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { works } from '../../data/works'
 
 function WorkDetailPage() {
@@ -17,12 +17,44 @@ function WorkDetailPage() {
         <p className="text-textMuted">{work.role}</p>
       </header>
 
-      <img
-        src={work.coverImage}
-        alt={`${work.title} 封面图`}
-        className="w-full rounded-card object-cover shadow-soft"
-        loading="lazy"
-      />
+      {work.id !== 'rain-screen' ? (
+        <img
+          src={work.coverImage}
+          alt={`${work.title} 封面图`}
+          className="w-full rounded-card object-cover shadow-soft"
+          loading="lazy"
+        />
+      ) : null}
+
+      {work.demoUrl ? (
+        <section className="overflow-hidden rounded-card border border-[#E7DED0] bg-[#101114] shadow-soft">
+          <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+            <p className="text-sm text-white/75">作品预览</p>
+            <div className="flex items-center gap-2">
+              <Link
+                to="/"
+                className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/80 transition-colors hover:border-white/25 hover:text-white"
+              >
+                回到主页
+              </Link>
+              <a
+                href={work.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/80 transition-colors hover:border-white/25 hover:text-white"
+              >
+                打开独立页
+              </a>
+            </div>
+          </div>
+          <iframe
+            src={work.demoUrl}
+            title={`${work.title} 预览`}
+            className="h-[720px] w-full bg-black"
+            loading="lazy"
+          />
+        </section>
+      ) : null}
 
       <section className="space-y-4 rounded-card bg-warm-card p-6 shadow-soft">
         <h2 className="text-xl font-semibold text-textMain">项目简介</h2>

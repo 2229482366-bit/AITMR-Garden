@@ -2,6 +2,14 @@ import type { Inspiration } from '../types/inspiration'
 
 export const inspirations: Inspiration[] = [
   {
+    id: 'insp-009',
+    type: 'image',
+    content: '因为喜欢雨，于是想要做一个听雨的小窗，顺便记笔记。',
+    imageUrl: '/rain-window.svg',
+    mediaPosition: 'top',
+    createdAt: '2026-04-30T08:30:00.000Z',
+  },
+  {
     id: 'insp-001',
     type: 'text',
     content: '今天发现，写代码最顺的时刻往往是先把问题说清楚之后。',

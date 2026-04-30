@@ -2,6 +2,16 @@ import type { Article } from '../types/article'
 
 export const articles: Article[] = [
   {
+    id: 'daily-2026-04-30-openai-microsoft-decoupling-nvidia-nemotron-ai-phone-deepseek-shield',
+    title: 'AI 日报｜微软与 OpenAI 解耦，端侧智能体与国产算力同步升温',
+    date: '2026-04-30',
+    readTime: '7 分钟',
+    summary:
+      '微软与 OpenAI 修改合作条款，结束 Azure 独占；英伟达发布面向 Agentic AI 的 Nemotron 3 Nano Omni；OpenAI 自研手机与 DeepSeek V4 带动国产算力需求，共同指向云、算力与交互三层解耦。',
+    category: 'daily',
+    tags: ['AI 日报', 'OpenAI', '微软', '英伟达', 'DeepSeek V4'],
+  },
+  {
     id: 'daily-2026-04-29-deepseek-price-shock-and-ai-stack-reshuffle',
     title: 'AI 日报｜DeepSeek V4 冲击扩散，AI 价值链重心加速迁移',
     date: '2026-04-29',
